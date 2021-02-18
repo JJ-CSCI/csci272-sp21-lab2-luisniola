@@ -5,7 +5,7 @@
 //------------------------------
 
 // Use this enum class for indicating the lat/long direction
-enum class Compass {N, S, W, E};{
+enum class Compass {N, S, W, E}{
 
  private:
 double latitute{0.0,90.0};
@@ -26,16 +26,28 @@ double getLatitude(){return longitudeDirection};
 // Write your code here
 class GPS {
   private:
-double GPS::latitute{0.0,90.0};
-double latitudeDirection{Compass::N ||Compass::S};
-double GPS::longitude{0.0,180.0};
-double longitudeDirection{Compass::W || Compass::E};
+double latitute{0.0,90.0};
+double getlatitudeDirection{Compass::N ||Compass::S};
+double longitude{0.0,180.0};
+double getlongitudeDirection{Compass::W || Compass::E};
 public:
+;
 
-double GPS::getLatitude(){latitude==0.0};
-double getLatitudeDirection(){Compass::N;}
-double getLongitude(){longitude==0.0};
-double getLongitudeDirection(){Compass::W;}
+double getLatitude(){
+  if latitude ==0.0;{
+  cout << getlatitudeDirection == Compass::N};
+  
+
+
+double getLongitude(){
+if longitude ==0.0;{
+cout << getlongitudeDirection == Compass::W};
+
+
+
+
+
+};
 
 
   
