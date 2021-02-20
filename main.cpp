@@ -5,56 +5,65 @@
 //------------------------------
 
 // Use this enum class for indicating the lat/long direction
-enum class Compass {N, S, W, E}{
+enum class Compass {N, S, W, E};
 
- private:
-double latitute{0.0,90.0};
-double latitudeDirection{Compass::N ||Compass::S};
-double longitude{0.0,180.0};
-double longitudeDirection{Compass::W || Compass::E};
-  
+class GPS{
+  double latitude;
+  Compass latitudeDirection;
+  double longitude;
+  Compass longitudeDirection;
 
+  public:
 
-public:
-double getLatitude(){return latitude;}
-double getLatitudeDirection(){return latitudeDirection;}
-double getLongitude(){return longitude;}
-double getLatitude(){return longitudeDirection};
-};
+  double getlatitude(){
+    return latitude;
+    }
+  Compass getLatitudeDirection(){
+    return latitudeDirection;
+    }
+  double getlongitude(){
+    return longitude;
+    }
+  Compass getLongitudeDirection(){
+    return longitudeDirection;
+    }
+    GPS(){
+      latitude = 0.0;
+      longitude = 0.0;
+      latitudeDirection = Compass::N;
+      longitudeDirection = Compass::W;
+    }
+    GPS(double latitude,double longitude){
+      if(latitude >= 0 && latitude <= 90)
+           this-> latitude = latitude;
+      else 
+           this->latitude = 0;
+      if(longitude >= 0 && longitude <= 180)
+           this-> longitude = longitude;
+      else
+           this-> longitude = 0;
+      latitudeDirection = Compass::N;
+      longitudeDirection = Compass::W;    
+    }
+    GPS(double latitude, double longitude, Compass latitudeDirection, Compass longitudeDirection){
 
+      if(latitude >= 0 && latitude <= 90){
+           this-> latitude = latitude;
+           this-> latitudeDirection = latitudeDirection;
+      }
+      else{this-> latitude = 0;
+           this-> latitudeDirection = Compass::N;
+      }
+      if(longitude >=0 && longitude <= 180){
+           this-> longitude = longitude;
+           this-> longitudeDirection = longitudeDirection;
+      }
+      else{this-> longitude = 0;
+            this-> longitudeDirection = Compass::W;
+            }
+    }
 
-// Write your code here
-class GPS {
-  private:
-double latitute{0.0,90.0};
-double getlatitudeDirection{Compass::N ||Compass::S};
-double longitude{0.0,180.0};
-double getlongitudeDirection{Compass::W || Compass::E};
-public:
-;
-
-double getLatitude(){
-  if latitude ==0.0;{
-  cout << getlatitudeDirection == Compass::N};
-  
-
-
-double getLongitude(){
-if longitude ==0.0;{
-cout << getlongitudeDirection == Compass::W};
-
-
-
-
-
-};
-
-
-  
-
-
-
-};
+  };
 
 //------------------------------
 //   DO NOT MODIFY TEST CASES
