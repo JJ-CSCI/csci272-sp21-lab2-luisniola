@@ -7,63 +7,49 @@
 // Use this enum class for indicating the lat/long direction
 enum class Compass {N, S, W, E};
 
-class GPS{
+class GPS {
   double latitude;
   Compass latitudeDirection;
   double longitude;
   Compass longitudeDirection;
 
-  public:
-
-  double getlatitude(){
-    return latitude;
-    }
-  Compass getLatitudeDirection(){
-    return latitudeDirection;
-    }
-  double getlongitude(){
-    return longitude;
-    }
-  Compass getLongitudeDirection(){
-    return longitudeDirection;
-    }
-    GPS(){
-      latitude = 0.0;
-      longitude = 0.0;
-      latitudeDirection = Compass::N;
-      longitudeDirection = Compass::W;
-    }
-    GPS(double latitude,double longitude){
-      if(latitude >= 0 && latitude <= 90)
-           this-> latitude = latitude;
-      else 
-           this->latitude = 0;
-      if(longitude >= 0 && longitude <= 180)
-           this-> longitude = longitude;
+public:
+  GPS(){
+    latitude = 0.0;
+    latitudeDirection = Compass::N;
+    longitude = 0.0;
+    longitudeDirection = Compass::W;
+  }
+  GPS(double lat, double lon){
+    if((0 <= lat) && (lat <= 90))
+      latitude = lat;
+    else
+       latitude = 0.0;
+    latitudeDirection = Compass::W;
+  }
+   GPS(double lat, Compass latd, double lon, Compass lond){
+     if ((0 <= lat)  && (lat <= 90))
+     latitude =lat;
+     else
+     latitude = 0.0;
+     if(latd == Compass::N || latd == Compass::S)
+        latitudeDirection = latd;
       else
-           this-> longitude = 0;
-      latitudeDirection = Compass::N;
-      longitudeDirection = Compass::W;    
-    }
-    GPS(double latitude, double longitude, Compass latitudeDirection, Compass longitudeDirection){
-
-      if(latitude >= 0 && latitude <= 90){
-           this-> latitude = latitude;
-           this-> latitudeDirection = latitudeDirection;
-      }
-      else{this-> latitude = 0;
-           this-> latitudeDirection = Compass::N;
-      }
-      if(longitude >=0 && longitude <= 180){
-           this-> longitude = longitude;
-           this-> longitudeDirection = longitudeDirection;
-      }
-      else{this-> longitude = 0;
-            this-> longitudeDirection = Compass::W;
-            }
-    }
-
-  };
+        latitudeDirection = Compass::N;
+      if((0 <= lon) && (lon <= 180))
+         longitude = lon;
+      else 
+         longitude = 0.0;
+      if(lond == Compass::W || lond == Compass::E)
+         longitudeDirection = lond;
+      else
+        longitudeDirection = Compass::W;  
+        }   
+      double getLatitude() {return latitude;}
+      Compass getLatitudeDirection() { return latitudeDirection;}
+      double getLongitude() {return longitude;}
+      Compass getLongitudeDirection(){return longitudeDirection;}
+};
 
 //------------------------------
 //   DO NOT MODIFY TEST CASES
