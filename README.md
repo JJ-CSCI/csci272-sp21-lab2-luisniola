@@ -25,7 +25,7 @@ Write a class for storing a GPS coordinate, [latitude](https://en.wikipedia.org/
   - `getLatitude` returns the latitude angle, `double` type
   - `getLatitudeDirection` returns the latitude direction, `Compass` type
   - `getLongitude` returns the longitude angle, `double` type
-  - `getLatitude` returns the longitude direction, `Compass` type
+  - `getLongitudeDirection` returns the longitude direction, `Compass` type
 - Define the class constructors that initialize an object of `GPS` class under the following conditions
   - If no coordinates are specified during the object instantiation then the latitude and longitude angles are set to zero, the latitude direction is set to `Compass::N`, and the longitude direction is set to `Compass::W`
   - If only the latitude and longitude angles are specified during the object instantiation, then the latitude direction is `Compass::N`, and the longitude direction is `Compass::W`
